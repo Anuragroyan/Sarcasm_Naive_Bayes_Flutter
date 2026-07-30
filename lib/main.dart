@@ -28,7 +28,6 @@ class _SarcasmHomePageState extends State<SarcasmHomePage> {
 
   late SarcasmDetector detector;
 
-
   @override
   void initState() {
     super.initState();
@@ -40,7 +39,6 @@ class _SarcasmHomePageState extends State<SarcasmHomePage> {
       });
     });
   }
-
 
   void _checkSarcasm() async {
     final inputText = _controller.text;
@@ -63,7 +61,8 @@ class _SarcasmHomePageState extends State<SarcasmHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sarcasm Detector',
+        title: Text(
+          'Sarcasm Detector',
           style: TextStyle(
             color: Colors.black87,
             fontWeight: FontWeight.bold,
@@ -90,45 +89,51 @@ class _SarcasmHomePageState extends State<SarcasmHomePage> {
               maxLines: 4,
             ),
             SizedBox(height: 16),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-           child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              Expanded(
-              child:ElevatedButton(
-                onPressed: isButtonEnabled ? _checkSarcasm : null,
-                child: Text('Check Sarcasm',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                     color: Colors.teal,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: isButtonEnabled ? _checkSarcasm : null,
+                      child: Text(
+                        'Check Sarcasm',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              ),
-              SizedBox(width: 15),
-              Expanded(
-              child: ElevatedButton(
-                onPressed: _clearSarcasm,
-                child: Text('Clear TextField',
-                  style: TextStyle(
-                    color: Colors.teal,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
+                  SizedBox(width: 15),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: _clearSarcasm,
+                      child: Text(
+                        'Clear TextField',
+                        style: TextStyle(
+                          color: Colors.teal,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                ],
               ),
-              ),
-             ],
             ),
-        ),
             SizedBox(height: 16),
             Text(
               result,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.redAccent),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.redAccent,
+              ),
             ),
           ],
         ),
@@ -136,5 +141,3 @@ class _SarcasmHomePageState extends State<SarcasmHomePage> {
     );
   }
 }
-
-

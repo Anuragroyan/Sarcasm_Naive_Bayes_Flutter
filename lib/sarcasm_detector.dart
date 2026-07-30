@@ -12,15 +12,19 @@ class SarcasmDetector {
     final jsonData = json.decode(jsonString);
 
     vocabulary = Map<String, int>.from(jsonData['vocabulary']);
-    if (jsonData.containsKey('feature_log_prob') && jsonData['feature_log_prob'] != null) {
+    if (jsonData.containsKey('feature_log_prob') &&
+        jsonData['feature_log_prob'] != null) {
       featureLogProb = (jsonData['feature_log_prob'] as List<dynamic>)
-          .map<List<double>>((row) => (row as List<dynamic>)
-          .map<double>((val) => val.toDouble())
-          .toList())
+          .map<List<double>>(
+            (row) => (row as List<dynamic>)
+                .map<double>((val) => val.toDouble())
+                .toList(),
+          )
           .toList();
     }
 
-    if (jsonData.containsKey('class_log_prior') && jsonData['class_log_prior'] != null) {
+    if (jsonData.containsKey('class_log_prior') &&
+        jsonData['class_log_prior'] != null) {
       classLogPrior = (jsonData['class_log_prior'] as List<dynamic>)
           .map<double>((e) => e.toDouble())
           .toList();
