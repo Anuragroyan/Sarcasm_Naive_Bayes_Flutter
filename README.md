@@ -1,6 +1,4 @@
-# sarcasm_nb_detector
-
-Naive Bayes sarcasm detection
+# 🤖 Sarcasm Detector is a Kotlin-based Android app that uses the Naive Bayes machine learning algorithm to analyze user-provided text and detect sarcasm. It demonstrates on-device machine learning, text classification, probability-based prediction, and real-time results without requiring a backend.
 
 ## Getting Started
 
